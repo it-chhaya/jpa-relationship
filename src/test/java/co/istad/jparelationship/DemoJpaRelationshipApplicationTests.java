@@ -13,6 +13,24 @@ class DemoJpaRelationshipApplicationTests {
     @Autowired
     private AuthorRepository authorRepository;
 
+    @Autowired
+    private BookService bookService;
+
+
+    @Test
+    void testDeleteAuthorBook() {
+        Integer authorId = 9;
+        bookService.deleteAuthorBook(authorId);
+    }
+
+
+    @Test
+    void testDeleteAuthor() {
+        Integer authorId = 2;
+        authorRepository.deleteById(authorId);
+    }
+
+
     @Test
     void testInsertSingleAuthor() {
         Author author = new Author();

@@ -22,7 +22,8 @@ public class Book {
     private String code;
     private String title;
 
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL,
+        orphanRemoval = true)
     private List<Chapter> chapters = new ArrayList<>();
 
     @ManyToOne

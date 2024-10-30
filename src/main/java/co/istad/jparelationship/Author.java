@@ -24,7 +24,8 @@ public class Author {
     private String email;
 
     @OneToMany(mappedBy = "author",
-            cascade = CascadeType.PERSIST
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
     )
     private List<Book> books = new ArrayList<>();
 

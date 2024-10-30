@@ -26,7 +26,7 @@ public class Book {
         orphanRemoval = true)
     private List<Chapter> chapters = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Author author;
 
 }

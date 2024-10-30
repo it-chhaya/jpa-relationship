@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 @SpringBootTest
 class DemoJpaRelationshipApplicationTests {
@@ -78,13 +79,13 @@ class DemoJpaRelationshipApplicationTests {
         book.setAuthor(author);
 
         Chapter chapter1 = new Chapter();
-        chapter1.setId("chapter3");
+        chapter1.setId(UUID.randomUUID().toString());
         chapter1.setTitle("The fellowship of the ring");
         chapter1.setPageNo(1);
         chapter1.setBook(book);
 
         Chapter chapter2 = new Chapter();
-        chapter2.setId("chapter4");
+        chapter2.setId(UUID.randomUUID().toString());
         chapter2.setTitle("The Two Towers");
         chapter2.setPageNo(1000);
         chapter2.setBook(book);
